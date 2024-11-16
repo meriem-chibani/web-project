@@ -1,0 +1,582 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.global-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+
+/* Cover styling with animated background images */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 550px; 
+  background-size: cover;
+  background-position: right; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+
+  /* Background image animation */
+  animation: slideBackground 20s infinite; 
+}
+
+/* Gradient overlay for the cover */
+.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(42, 42, 58, 0.7), rgba(34, 34, 54, 0.5));
+  z-index: 1;
+}
+
+/* Main header container */
+.social-networks {
+  display: flex;
+  justify-content: space-between; /* Ensures space between left and right sections */
+  
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  font-family: 'Poppins';
+  color: white;
+  font-size: 15px;
+  background-color: #3B5998;
+  
+}
+
+/* Left section for phone icons */
+.phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Right section for social icons */
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+/* General icon styling */
+.fa {
+  font-size: 20px; /* Reduced font size for better fit */
+  width: 40px;     /* Circle width */
+  height: 40px;    /* Circle height */
+  display: flex;
+  padding: 8.5px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  line-height: 1; /* Ensures the icon stays centered */
+}
+
+.fa:hover {
+  opacity: 0.7; /* Hover effect */
+  cursor: pointer;
+}
+
+/* Specific styling for each icon */
+.fa-whatsapp {
+  background: #25D366;
+  
+}
+
+.fa-envelope {
+  background: #55555577;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  padding: 11px;
+}
+
+.fa-instagram {
+  background: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045)
+}
+
+
+
+
+/* Header-flex styling */
+.header-flex {
+  position: fixed;
+  margin-top: 40;
+  top: 10px; /* Adjust this value to control the distance from the top */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right; /* Ensure space between logo and options */
+  align-items: center; /* Align all items vertically */
+  padding: 20px 40px;
+  z-index: 2; /* Ensure it stays above other elements */
+  background-color: #1d2a57fa;/* Optional: Set background color to prevent overlap issues */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.502); /* Optional: Add shadow for visual separation */
+}
+
+/* Logo styling */
+.logo {
+  position: absolute; /* Take the logo out of the normal document flow */
+  top: 40px; /* Distance from the top of the page */
+  left: 20px; /* Distance from the left of the page */
+  z-index: 10; 
+  height: 50px; /* Set desired height */
+  position: fixed;
+}
+
+.my-logo {
+  height: 100px; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Options-flex (navigation) styling */
+.options-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
+}
+
+.header-elem {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.3s ease;
+  display: flex; /* Ensure they are flex items */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+}
+
+.header-elem:hover {
+    opacity: 0.6; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: rgb(194, 197, 223);
+}
+
+/* Registration button styling */
+.registration {
+  padding: 10px 20px;
+  background-color: #D0D8E2; /* Light blue for the button */
+  color: #333; /* Darker color for the text */
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flex to enable vertical alignment */
+  align-items: center; /* Center the button text vertically */
+  height: 40px; /* Set a specific height to align with other elements */
+}
+
+/* Ensure button text is vertically centered */
+.registration:hover {
+    opacity: 0.8; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #333;
+    color: #D0D8E2;
+}
+
+/* Cover text styling */
+.cover-text {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+   /* Adjust as needed to center text */
+}
+
+.cover-title {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  font-size: 50px;
+  font-weight: bold;
+  
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffffff; /* Light blue for subtitle */
+  font-family: 'Poppins', sans-serif;
+}
+/* Keyframes for sliding background image animation */
+/* Container styles */
+.cover-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: slideBackground 30s infinite;
+}
+
+/* Animation for sliding background images */
+@keyframes slideBackground {
+  0%, 10% {
+      background-image: url('imgs/img1.jpg');
+      background-position: right;
+  }
+  20%, 30% {
+      background-image: url('imgs/img2.jpg');
+      background-position: left;
+  }
+  40%, 50% {
+      background-image: url('imgs/img3.jpg');
+      background-position: right;
+  }
+  60%, 70% {
+      background-image: url('imgs/img4.jpg');
+      background-position: left;
+  }
+  80%, 90% {
+      background-image: url('imgs/img5.jpg');
+      background-position: right;
+  }
+  100% {
+      background-image: url('imgs/img1.jpg');
+      background-position: right;
+  }
+}
+
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .educational-info-section, .program-info-section, .personal-info-section {
+    background-color: #e7f4fe;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #d1e7f8;
+  }
+  
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  select {
+    background-color: #ffffff;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  button.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  button.submit-btn:hover {
+    background-color: #45a049;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer-container {
+  width: 100%;
+  background-color: #1d2a57fa;
+  color: #ffffff;
+  padding: 20px 0;
+  font-family: 'Nutino', sans-serif;
+}
+
+.logo-footer{
+  width: 200px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.footer-divider {
+  width: 250px;
+  border-top: 2px solid #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  color: #f2a900;
+}
+
+.company-info {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+
+
+.company-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f2a900;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #555555;
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 20px;
+}
+
+
+
+/* Style for the dropdown container */
+.header-elem {
+  position: relative;
+  display: inline-block;
+  z-index: 9999; /* Ensure it's on top of its immediate sibling elements */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10000; /* Make sure the dropdown is above everything else */
+  left: 0; /* Align it to the left of the parent */
+  border-radius: 4px;
+  padding: 5px 0;
+}
+
+/* Show the dropdown when hovering over the parent */
+.header-elem:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the links when hovered over */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 768px (tablets, phones) */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .options-flex {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .social-networks {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+    position: static;
+    align-items: center;
+  }
+
+  .phone, .social {
+    gap: 10px;
+  }
+
+  .cover {
+    height: 400px;
+    text-align: left;
+  }
+
+  .cover-title {
+    font-size: 30px;
+  }
+
+  .cover-subtitle {
+    font-size: 14px;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+  .header-flex {
+    padding: 15px;
+  }
+
+  .header-elem {
+    font-size: 14px;
+  }
+
+  .cover-title {
+    font-size: 24px;
+  }
+
+  .cover-subtitle {
+    font-size: 12px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  button.submit-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}

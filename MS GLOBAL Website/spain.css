@@ -1,0 +1,780 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.global-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+/* Cover styling with animated background images */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 550px; 
+  background-size: cover;
+  background-position: right; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+
+  /* Background image animation */
+  animation: slideBackground 20s infinite; 
+}
+
+/* Gradient overlay for the cover */
+.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(42, 42, 58, 0.7), rgba(34, 34, 54, 0.5));
+  z-index: 1;
+}
+
+/* Main header container */
+.social-networks {
+  display: flex;
+  justify-content: space-between; /* Ensures space between left and right sections */
+  
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  font-family: 'Poppins';
+  color: white;
+  font-size: 15px;
+  background-color: #3B5998;
+  
+}
+
+/* Left section for phone icons */
+.phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Right section for social icons */
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+/* General icon styling */
+.fa {
+  font-size: 20px; /* Reduced font size for better fit */
+  width: 40px;     /* Circle width */
+  height: 40px;    /* Circle height */
+  display: flex;
+  padding: 8.5px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  line-height: 1; /* Ensures the icon stays centered */
+}
+
+.fa:hover {
+  opacity: 0.7; /* Hover effect */
+  cursor: pointer;
+}
+
+/* Specific styling for each icon */
+.fa-whatsapp {
+  background: #25D366;
+  
+}
+
+.fa-envelope {
+  background: #55555577;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  padding: 11px;
+}
+
+.fa-instagram {
+  background: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045)
+}
+
+
+
+
+/* Header-flex styling */
+.header-flex {
+  position: fixed;
+  margin-top: 40;
+  top: 10px; /* Adjust this value to control the distance from the top */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right; /* Ensure space between logo and options */
+  align-items: center; /* Align all items vertically */
+  padding: 20px 40px;
+  z-index: 2; /* Ensure it stays above other elements */
+  background-color: #1d2a57fa;/* Optional: Set background color to prevent overlap issues */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.502); /* Optional: Add shadow for visual separation */
+}
+
+/* Logo styling */
+.logo {
+  position: absolute; /* Take the logo out of the normal document flow */
+  top: 40px; /* Distance from the top of the page */
+  left: 20px; /* Distance from the left of the page */
+  z-index: 10; 
+  height: 50px; /* Set desired height */
+  position: fixed;
+}
+
+.my-logo {
+  height: 100px; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Options-flex (navigation) styling */
+.options-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
+}
+
+.header-elem {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.3s ease;
+  display: flex; /* Ensure they are flex items */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+}
+
+.header-elem:hover {
+    opacity: 0.6; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: rgb(194, 197, 223);
+}
+
+/* Registration button styling */
+.registration {
+  padding: 10px 20px;
+  background-color: #D0D8E2; /* Light blue for the button */
+  color: #333; /* Darker color for the text */
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flex to enable vertical alignment */
+  align-items: center; /* Center the button text vertically */
+  height: 40px; /* Set a specific height to align with other elements */
+}
+
+/* Ensure button text is vertically centered */
+.registration:hover {
+    opacity: 0.8; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #333;
+    color: #D0D8E2;
+}
+
+/* Cover text styling */
+.cover-text {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+   /* Adjust as needed to center text */
+}
+
+.cover-title {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffffff; /* Light blue for subtitle */
+  font-family: 'Poppins', sans-serif;
+}
+/* Keyframes for sliding background image animation */
+/* Container styles */
+.cover-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: slideBackground 30s infinite;
+}
+
+/* Animation for sliding background images */
+@keyframes slideBackground {
+  0%, 10% {
+      background-image: url('imgs/spain-cover2.jpg');
+      background-position: right;
+  }
+ 
+  100% {
+      background-image: url('imgs/spain-cover2.jpg');
+      background-position: right;
+  }
+}
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    line-height: 1.6;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #2d3e50;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #2d3e50;
+    font-weight: 600;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #4CAF50;
+  }
+  
+  .content {
+    width: 75%;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #2d3e50;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #2d3e50;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    font-size: 1rem;
+    
+    margin: 5px 0;
+  }
+  
+
+
+
+.university-image img {
+  width: 600px; /* Adjust size as needed */
+  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.university-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+.university-image img {
+  width: 350px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.about-block{
+
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  
+
+}
+
+
+/* Styling for the Registration Section */
+.registration-block {
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  text-align: center;
+}
+
+.registration-block h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.registration-block p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.registration-block .btn-register {
+  background-color: #306298;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.registration-block .btn-register:hover {
+  background-color: #73b6fe;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer-container {
+  width: 100%;
+  background-color: #1d2a57fa;
+  color: #ffffff;
+  padding: 20px 0;
+  font-family: 'Nutino', sans-serif;
+}
+
+.logo-footer{
+  width: 200px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.footer-divider {
+  width: 250px;
+  border-top: 2px solid #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  color: #f2a900;
+}
+
+.company-info {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+
+
+.company-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f2a900;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #555555;
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 20px;
+}
+
+
+
+/* Style for the dropdown container */
+.header-elem {
+  position: relative;
+  display: inline-block;
+  z-index: 9999; /* Ensure it's on top of its immediate sibling elements */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10000; /* Make sure the dropdown is above everything else */
+  left: 0; /* Align it to the left of the parent */
+  border-radius: 4px;
+  padding: 5px 0;
+}
+
+/* Show the dropdown when hovering over the parent */
+.header-elem:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the links when hovered over */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+
+/* Mobile adjustments (screens less than or equal to 768px) */
+@media screen and (max-width: 768px) {
+
+  /* General styling for text size and layout adjustments */
+  .cover-title {
+    font-size: 32px; /* Smaller font for mobile */
+  }
+
+  .cover-subtitle {
+    font-size: 16px; /* Adjust subtitle font size */
+  }
+
+  .header-flex {
+    padding: 10px 20px;
+    flex-direction: column; /* Stack logo and options vertically */
+    align-items: flex-start; /* Align items to the left */
+    top: 20px;
+  }
+
+  .logo {
+    height: 40px;
+    left: 15px; /* Adjust logo positioning */
+  }
+
+  .options-flex {
+    gap: 10px;
+    flex-direction: column; /* Stack navigation options vertically */
+    align-items: flex-start;
+  }
+
+  .registration {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .main-content {
+    flex-direction: column; /* Stack the main content vertically */
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar takes full width on mobile */
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%; /* Main content takes full width */
+  }
+
+  /* Adjust university image for mobile */
+  .university-image img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+  }
+
+  /* Adjust about block for mobile */
+  .about-block {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px;
+  }
+
+  /* Footer adjustments */
+  .footer-row {
+    flex-direction: column; /* Stack footer items vertically */
+    align-items: center;
+  }
+
+  .footer-icons {
+    flex-direction: column; /* Stack footer icons vertically */
+    align-items: center;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+/* Mobile adjustments for header and social networks */
+@media screen and (max-width: 768px) {
+
+  /* Header flex adjustments */
+  .header-flex {
+    padding: 5px 10px; /* Reduce padding to make the header more compact */
+    flex-direction: column; /* Stack logo and options vertically */
+    align-items: flex-start; /* Align items to the left */
+    top: 1px;
+     /* Let the header shrink to fit content */
+  }
+
+  /* Reduce height and adjust positioning of the logo */
+  .logo img {
+    height: 100px; /* Reduce the logo size */
+   ; /* Adjust logo position */
+    width: 200px;
+  }
+
+  .options-flex {
+    gap: 10px;
+    flex-direction: column; /* Stack navigation options vertically */
+    align-items: flex-start;
+    font-size: 14px; /* Smaller font for navigation options */
+  }
+
+  /* Social networks section adjustments */
+  .social-networks {
+    padding: 0 5px; /* Reduced padding */
+    height: 5px; /* Smaller height for social network bar */
+    justify-content: center; /* Center the social icons */
+    
+  }
+
+  /* Adjust icon size in social network section */
+  .phone, .social {
+    gap: 6px; /* Reduce the gap between icons */
+  }
+
+  .fa {
+    font-size: 10px; /* Smaller icons */
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+  }
+
+  /* Reduce font size of text in the social networks section */
+  .social-networks .phone,
+  .social-networks .social {
+    font-size: 10px;
+  }
+
+  /* Reduce height for social network section */
+  .social-networks {
+    height: 6px; /* Adjust to a more compact height */
+  }
+}
+
+/* Small screen adjustments (phones with width less than 480px) */
+@media screen and (max-width: 480px) {
+
+  /* Further reduce header padding and height on very small screens */
+  .header-flex {
+    padding: 5px 10px; /* Further reduce padding */
+    height: auto; /* Allow header to shrink */
+  }
+
+  .logo {
+    height: 35px; /* Even smaller logo */
+  }
+
+  .options-flex {
+    gap: 8px;
+    font-size: 12px; /* Further reduce font size for mobile */
+  }
+
+  .social-networks {
+    padding: 0 5px; /* Reduce padding even more */
+    height: 40px; /* Make social section even smaller */
+    justify-content: center;
+  }
+
+  .fa {
+    font-size: 14px; /* Even smaller icons for mobile */
+    width: 30px;
+    height: 30px;
+    padding: 5px; /* Adjust padding for smaller icons */
+  }
+
+  .phone, .social {
+    gap: 5px; /* Smaller gap between social icons */
+  }
+}

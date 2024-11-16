@@ -1,0 +1,243 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+  </head>
+
+  <script src="javascript.js"></script> 
+
+  <link rel="stylesheet" href="registrationstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+
+    <div class="global-flex">
+
+      <div class="social-networks">
+        <div class="phone">
+          <a href="https://wa.me/213666994804" aria-label="WhatsApp" target="_blank">
+            <i class="fa fa-whatsapp" style="font-size: 24px;"></i>
+          </a>
+          <span>+213 666 99 48 04</span>
+          <a href="mailto:msglobal.algeria@gmail.com" aria-label="Email" target="_blank">
+            <i class="fa fa-envelope" style="font-size: 24px;"></i>
+          </a>
+          <span>msglobal.algeria@gmail.com</span>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/MSGLOBALDZ/?locale=fr_FR" aria-label="Facebook" target="_blank">
+            <i class="fa fa-facebook" style="font-size: 24px;"></i>
+          </a>
+          <a href="https://www.instagram.com/msglobal_algeria/" aria-label="Instagram" target="_blank">
+            <i class="fa fa-instagram" style="font-size: 24px;"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="cover">
+        <div class="logo">
+          <img class="my-logo" src="imgs/whitelogo.png" alt="Logo">
+        </div>
+
+        <div class="header-flex">
+          <div class="options-flex">
+            <a href="index.html"><div class="header-elem">Home</div></a>
+            <a href="about-us.html"><div class="header-elem">About us</div></a>
+            <a href="services.html"><div class="header-elem">Services</div></a>
+            
+            <!-- Dropdown for Destinations -->
+            <div class="header-elem dropdown">
+              <a href="#">Destinations</a>
+              <div class="dropdown-content">
+                <a href="spain.html">Spain</a>
+                <a href="destinations/france.html">Roumania</a>
+                <a href="destinations/germany.html">Hungaria</a>
+                <a href="destinations/italy.html">Turkey</a>
+                <a href="destinations/malaysia.html">Malaysia</a>
+              </div>
+            </div>
+        
+            <a href="contact.html"><div class="header-elem">Contact</div></a>
+            <a href="registration.html"><div class="registration">Registration</div></a>
+          </div>
+        </div>
+
+
+        <div class="cover-text">
+          <h1 class="cover-title">Registration</h1>
+          <p class="cover-subtitle"></p>
+        </div>
+      </div>
+
+
+
+      <div class="form-container">
+        <h2>Please Fill the Form with Your Information</h2>
+        
+        <!-- Educational Information Section -->
+        <div class="section educational-info-section">
+          <h3>Educational Information</h3>
+          <label for="study-level">Study Level</label>
+          <input type="text" id="study-level" name="study-level" required>
+      
+          <label for="field">Field</label>
+          <input type="text" id="field" name="field" required>
+      
+          <label for="most-recent-degree">Most Recent Degree Obtained</label>
+          <input type="text" id="most-recent-degree" name="most-recent-degree" required>
+      
+          <label for="year-graduation">Year of Graduation</label>
+          <input type="number" id="year-graduation" name="year-graduation" min="1900" max="2024" required>
+      
+        </div>
+      
+        <!-- Program Information Section -->
+        <div class="section program-info-section">
+          <h3>Program of Interest</h3>
+          <label for="destination">Country</label>
+          <input type="text" id="destination" name="destination" required>
+      
+          <label for="program-field">Field</label>
+          <input type="text" id="program-field" name="program-field" required>
+      
+          <label for="cycle">Cycle</label>
+          <select id="cycle" name="cycle" required>
+            <option value="Preparatory Year">Preparatory Year</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Master">Master</option>
+            <option value="PhD">PhD</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      
+        <!-- Personal Information Section -->
+        <div class="section personal-info-section">
+          <h3>Personal Information</h3>
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" required>
+      
+          <label for="family-name">Family Name</label>
+          <input type="text" id="family-name" name="family-name" required>
+      
+          <label for="passport-number">Passport Number</label>
+          <input type="text" id="passport-number" name="passport-number" required>
+      
+          <label for="sex">Sex</label>
+          <input type="text" id="sex" name="sex" required>
+      
+          <label for="birth-date">Birth Date</label>
+          <input type="date" id="birth-date" name="birth-date" required>
+      
+          <label for="birth-place">Birth Place</label>
+          <input type="text" id="birth-place" name="birth-place" required>
+      
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required>
+      
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" required>
+      
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+      
+          <label for="university">University / Institut</label>
+          <input type="text" id="university" name="university">
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+      
+        <button class="submit-btn">Submit</button>
+      </div>
+      
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-row">
+      <!-- Company Info -->
+      <div class="footer-section company-info">
+        <img src="imgs/whitelogo.png" alt="Company Logo" class="logo-footer">
+        <p class="company-description">
+          Your best partner for study abroad with expertise in program selection, visa procedures, and immigration services.
+        </p>
+      </div>
+
+      <!-- Extra Links -->
+      <div class="footer-section">
+        <h4>Extra Links</h4>
+        <div class="footer-divider"></div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-divider"></div>
+        
+        <p><i class="fas fa-phone-alt"></i> <i class="fa fa-whatsapp" style="font-size: 20px; background-color: transparent;"></i> +213 666 99 48 04</p>
+        <p><i class="fas fa-phone-alt"></i> <i class="fa fa-whatsapp" style="font-size: 20px; background-color: transparent;"></i> +7 916 613 29 84</p>
+        <p><i class="fa fa-envelope" style="font-size: 16px; background-color: transparent;"></i> msglobal.algeria@gmail.com</p>
+        <p><i class="fa fa-envelope" style="font-size: 16px; background-color: transparent;"></i> info@msglobal.com</p>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-divider"></div>
+        <p>Follow Us on our social media:</p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/MSGLOBALDZ/?locale=fr_FR" aria-label="Facebook" target="_blank">
+            <i class="fa fa-facebook" style="font-size: 24px;"></i>
+          </a>
+          <a href="https://www.instagram.com/msglobal_algeria/" aria-label="Instagram" target="_blank">
+            <i class="fa fa-instagram" style="font-size: 24px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 MS Global Agency | All rights reserved </p>
+  </div>
+</footer>
+<!-- Footer End -->
+
+      
+
+      
+
+      
+
+
+
+
+
+    
+    
+
+
+
+
+
+    </div>
+  </body>
+</html>

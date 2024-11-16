@@ -1,0 +1,834 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.global-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+
+/* Cover styling with animated background images */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 550px; 
+  background-size: cover;
+  background-position: right; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+
+  /* Background image animation */
+  animation: slideBackground 20s infinite; 
+}
+
+/* Gradient overlay for the cover */
+.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(42, 42, 58, 0.7), rgba(34, 34, 54, 0.5));
+  z-index: 1;
+}
+
+
+/* Main header container */
+.social-networks {
+  display: flex;
+  justify-content: space-between; /* Ensures space between left and right sections */
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  font-family: 'Poppins';
+  color: white;
+  font-size: 15px;
+  background-color: #3B5998;
+  
+}
+
+/* Left section for phone icons */
+.phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Right section for social icons */
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+/* General icon styling */
+.fa {
+  font-size: 20px; /* Reduced font size for better fit */
+  width: 40px;     /* Circle width */
+  height: 40px;    /* Circle height */
+  display: flex;
+  padding: 8.5px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  line-height: 1; /* Ensures the icon stays centered */
+}
+
+.fa:hover {
+  opacity: 0.7; /* Hover effect */
+  cursor: pointer;
+}
+
+/* Specific styling for each icon */
+.fa-whatsapp {
+  background: #25D366;
+  
+}
+
+.fa-envelope {
+  background: #55555577;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  padding: 11px;
+}
+
+.fa-instagram {
+  background: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045)
+}
+
+
+
+
+/* Header-flex styling */
+.header-flex {
+  position: fixed;
+  top: 40px; /* Adjust  value to control the distance from the top */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right; /* Ensure space between logo and options */
+  align-items: center; /* Align all items vertically */
+  padding: 20px 40px;
+  z-index: 2; /* Ensure it stays above other elements */
+  background-color: #1d2a57fa;/* Optional: Set background color to prevent overlap issues */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.502); /* Optional: Add shadow for visual separation */
+}
+
+/* Logo styling */
+.logo {
+  position: relative; /* Take the logo out of the normal document flow */
+  top: 30px; /* Distance from the top of the page */
+  left: 20px; /* Distance from the left of the page */
+  z-index: 10; 
+  height: 50px; /* Set desired height */
+  position: fixed;
+}
+
+.my-logo {
+  height: 100px; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Options-flex (navigation) styling */
+.options-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
+}
+
+.header-elem {
+  color: white;
+  padding-top: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.3s ease;
+  display: flex; /* Ensure they are flex items */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+}
+
+.header-elem:hover {
+    opacity: 0.6; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: rgb(194, 197, 223);
+}
+
+/* Registration button styling */
+.registration {
+  padding: 10px 20px;
+  background-color: #D0D8E2; /* Light blue for the button */
+  color: #333; /* Darker color for the text */
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 8px; 
+  display: flex; /* Use flex to enable vertical alignment */
+  align-items: center; /* Center the button text vertically */
+  height: 40px; /* Set a specific height to align with other elements */
+}
+
+/* Ensure button text is vertically centered */
+.registration:hover {
+    opacity: 0.8; /* Change opacity on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #1032dc;
+    color: #ffffff;
+}
+
+/* Cover text styling */
+.cover-text {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  
+}
+
+.cover-title {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 50px;
+  font-weight: bold;
+  z-index: 3;
+  position: relative;
+  
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffffff; 
+  font-family: 'Poppins', sans-serif;
+}
+/* Keyframes for sliding background image animation */
+/* Container styles */
+.cover-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: slideBackground 30s infinite;
+}
+
+/* Animation for sliding background images */
+@keyframes slideBackground {
+  0%, 10% {
+      background-image: url('imgs/img1.jpg');
+      background-position: right;
+  }
+  20%, 30% {
+      background-image: url('imgs/img2.jpg');
+      background-position: left;
+  }
+  40%, 50% {
+      background-image: url('imgs/img3.jpg');
+      background-position: right;
+  }
+  60%, 70% {
+      background-image: url('imgs/img4.jpg');
+      background-position: left;
+  }
+  80%, 90% {
+      background-image: url('imgs/img5.jpg');
+      background-position: right;
+  }
+  100% {
+      background-image: url('imgs/img1.jpg');
+      background-position: right;
+  }
+}
+
+
+.who-are-we {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: row;
+    padding: 20px;
+    background-color: #ffffff; /* Light background color */
+    margin-top: 40px;
+}
+
+.who-are-we img {
+    max-width: 600px; /* Adjust logo size */
+    margin-right: 20px;
+ /* Space between logo and content */
+}
+
+
+
+.who-texts {
+    display: flex;
+    flex-direction: column; /* Allow this section to take the remaining space */
+    font-size: 15   px;
+    font-weight: 300;
+  margin-top: 10px;
+  margin-right: 20px;
+  padding-right: 60px;
+  color: #555370; /* Light blue for subtitle */
+  font-family: 'Poppins', sans-serif;
+  text-align: left  ;
+}
+
+.who-sub {
+    font-size: 20px;
+    font-weight: 300;
+  margin-top: 10px;
+  color: rgb(73, 86, 185); /* Light blue for subtitle */
+  font-family: 'Poppins', sans-serif;
+}
+
+.who-title {
+    font-family: 'Nunito', sans-serif; /* Apply Poppins font */
+    font-size: 36px;
+    font-weight: 900;
+    text-shadow: 0px 1px, 1px 0px, 1px 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+#msglobal{
+    font-family: 'Nunito', sans-serif; /* Apply Poppins font */
+    font-size: 36px;
+    font-weight: 800;
+    padding-top: 20px;
+    color: rgb(73, 86, 185);
+}
+
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping to next line */
+    justify-content: space-between; /* Distribute space evenly */
+    padding: 20px; /* Add some padding around the container */
+}
+
+/* Feature item styling */
+.feature {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 10px 15px; /* Padding for feature items */
+    margin: 10px; /* Margin between items */
+    width: 100%; /* Control the width of items, adjust as needed */
+}
+
+/* Arrow styling */
+.arrow {
+    color: #3f34a1; /* Green color for the arrow */
+    font-size: 20px; /* Arrow size */
+    margin-right: 10px; /* Space between arrow and text */
+    margin-bottom: 25px;
+}
+
+/* Text styling */
+.text {
+    color: #8a9a9d; /* Grey color for the text */
+    font-size: 16px; /* Font size for text */
+}
+
+
+.features{
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+}
+
+.right, .left{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    
+}
+
+
+
+/* Center the services section and the grid layout with some space on the left and right */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Add some space on the left and right */
+.container-xxl {
+  padding-left: 40px;  /* Space on the left */
+  padding-right: 40px; /* Space on the right */
+}
+
+.text-center h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Service Grid Layout */
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center all items in the row */
+  gap: 20px; /* Space between items */
+}
+
+/* Service Item Styling (Reduced Width and Increased Height) */
+
+/* Icon Styling */
+.service-item i {
+  color: rgb(73, 86, 185); /* Default icon color */
+  font-size: 40px;
+  margin-bottom: 15px;
+  transition: color 0.3s ease-in-out;
+  
+}
+
+/* Title Styling */
+.service-item h5 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 10px;
+
+}
+
+/* Service Item Styling (Reduced Width and Increased Height) */
+.service-item {
+  background-color: #f9f9f9; /* Default background color */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px; /* Reduced width of each item */
+  /* Increased height of the card */
+  transition: all 0.3s ease-in-out;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+
+/* Text Styling */
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  height: auto; /* Limit height of the text */
+  overflow: visible;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+/* Hover Effect for Service Items */
+.service-item:hover {
+  background-color: rgb(73, 86, 185); /* Change background color to blue */
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  color: white; /* Text color changes to white */
+}
+
+/* Change Icon color to white on hover */
+.service-item:hover i {
+  color: #fff; /* Icon color changes to white */
+}
+
+/* Change text color to white on hover */
+.service-item:hover h5, 
+.service-item:hover p {
+  color: #fff; /* Title and paragraph text change to white */
+}
+
+
+.testimonial-section {
+  text-align: center;
+  width: 80%;
+  font-family: 'Nunito', sans-serif; /* Apply Nunito font */
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.testimonials-container {
+  position: relative; /* Change this from fixed to relative */
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonials {
+  display: flex;
+  animation: slide 32s infinite; /* Animation duration */
+}
+
+.testimonial {
+  flex: 1 0 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Card styling */
+.testimonial-card {
+  background: linear-gradient(135deg, rgb(73, 86, 185), rgb(123, 133, 209), rgb(182, 188, 227)); /* Blue background */
+  color: #fff; /* White text */
+  padding: 30px 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.testimonial h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif; /* Ensuring font consistency */
+}
+
+
+.testimonial h4 {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif; /* Ensuring font consistency */
+}
+
+
+.testimonial p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'Nunito', sans-serif; /* Ensuring font consistency */
+}
+
+/* Keyframes for smooth animation with longer pause in the center */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(-100%);
+  }
+  80% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-300%); /* Adjust for 4th testimonial */
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer-container {
+  width: 100%;
+  background-color: #1d2a57fa;
+  color: #ffffff;
+  padding: 20px 0;
+  font-family: 'Nutino', sans-serif;
+}
+
+.logo-footer{
+  width: 200px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.footer-divider {
+  width: 250px;
+  border-top: 2px solid #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  color: #f2a900;
+}
+
+.company-info {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+
+
+.company-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;  
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f2a900;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #555555;
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 20px;
+}
+
+
+
+/* Style for the dropdown container */
+.header-elem {
+  position: relative;
+  display: inline-block;
+  
+  z-index: 10; /* Ensure it's on top of its immediate sibling elements */
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 15; /* Ensure it's above the header and title */
+  left: 0;
+  border-radius: 4px;
+  padding: 5px 0;
+}
+
+/* Show the dropdown when hovering over the parent */
+.header-elem:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the links when hovered over */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+
+
+  /* Contact Section Styling */
+  .contact-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    width: 45%;
+}
+
+.contact-info h2, .contact-info h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .contact-info ul {
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #004080;
+}
+
+.map-section {
+    width: 80%;
+    margin-top: 20px;
+    background-color: #e0e0e0;
+    padding: 10px;
+    text-align: center;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
